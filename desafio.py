@@ -9,8 +9,7 @@ menu  = """
     [q] Sair
 
 
-    =====>
-    """
+    =====> """
 
 
 deposito = 0
@@ -31,10 +30,13 @@ while True:
         while True: 
 
             valor_depositado = int(input("Digite o valor para Depósito: "))
-            saldo += valor_depositado
-            print(f"Valor depositado: {valor_depositado} R$")
-            print(f"Seu saldo: {saldo} R$")
-            extrato_depositado.append(valor_depositado)
+            if valor_depositado > 0:
+                saldo += valor_depositado
+                print(f"Valor depositado: {valor_depositado} R$")
+                print(f"Seu saldo: {saldo} R$")
+                extrato_depositado.append(valor_depositado)
+            else:
+                print("Depósito Inválido")
 
             resposta = input('Continuar deposito? [s]im [n]ão \n')
 
